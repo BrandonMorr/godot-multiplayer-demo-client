@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main_menu/main_menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPanel" type="Panel" parent="."]
+anchor_left = 0.3125
+anchor_top = 0.254512
+anchor_right = 0.6875
+anchor_bottom = 0.574512
+margin_bottom = -3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TitleLabel" type="Label" parent="MenuPanel"]
+anchor_left = 0.354167
+anchor_top = 0.204651
+anchor_right = 0.653646
+anchor_bottom = 0.277567
+text = "Multiplayer Demo"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NameTextbox" type="LineEdit" parent="MenuPanel"]
+visible = false
+anchor_left = 0.166667
+anchor_top = 0.416667
+anchor_right = 0.833333
+anchor_bottom = 0.541667
+align = 1
+max_length = 16
+placeholder_text = "Enter a name"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="JoinButton" type="Button" parent="MenuPanel"]
+visible = false
+anchor_left = 0.166667
+anchor_top = 0.666667
+anchor_right = 0.833333
+anchor_bottom = 0.770833
+text = "JOIN GAME"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LobbyPanel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.3125
+anchor_top = 0.254512
+anchor_right = 0.6875
+anchor_bottom = 0.574512
+margin_bottom = -3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PlayerList" type="ItemList" parent="LobbyPanel"]
+anchor_left = 0.25
+anchor_top = 0.371318
+anchor_right = 0.75
+anchor_bottom = 0.935359
+margin_top = -8.00007
+margin_right = -0.00012207
+margin_bottom = -8.29601
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ReadyButton" type="Button" parent="LobbyPanel"]
+anchor_left = 0.125
+anchor_top = 0.121317
+anchor_right = 0.458333
+anchor_bottom = 0.225484
+text = "READY"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LeaveButton" type="Button" parent="LobbyPanel"]
+anchor_left = 0.541667
+anchor_top = 0.121317
+anchor_right = 0.875
+anchor_bottom = 0.225484
+margin_left = 1.52588e-05
+text = "LEAVE"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StatusPanel" type="Panel" parent="."]
+anchor_left = 0.3125
+anchor_top = 0.601178
+anchor_right = 0.6875
+anchor_bottom = 0.681179
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StatusLabel" type="Label" parent="StatusPanel"]
+anchor_left = 0.166667
+anchor_top = 0.333333
+anchor_right = 0.833333
+anchor_bottom = 0.625
+margin_bottom = 1.90735e-06
+text = "Connecting to server..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="MenuPanel/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="LobbyPanel/ReadyButton" to="." method="_on_ReadyButton_pressed"]
+[connection signal="pressed" from="LobbyPanel/LeaveButton" to="." method="_on_LeaveButton_pressed"]
